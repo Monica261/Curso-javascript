@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <style>
+        label{
+            display: block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-bottom: .5rem;
+            margin-top: 1rem;
+        }
+        form{
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input, textarea{
+            width: 100%;
+            box-sizing: border-box;
+            padding: .5rem;
+            border: 2px solid #000;
+            font-size: 1rem;
+            margin-bottom: .5rem;
+        }
+        textarea{
+            min-height: 150px;
+        }
+        .invalido{
+            border: 2px solid red!important;
+        }
+    </style>
+
+    <form name="contato" id="contato">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome">
+        <span class="nome"></span>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <span class="erro"></span>
+
+        <label for="mensagem">Menssagem</label>
+        <textarea name="mensagem" id="mensagem"></textarea>
+
+        <select name="cores">
+            <option value="lightblue">blue</option>
+            <option value="lightpink">pink</option>
+        </select>
+        <br/><br/>
+        <input type="color">
+
+        <input type="checkbox" value="identidade" id="identidade">
+        <label for="identidade">Possui identidade?</label>
+        
+    </form>
+
+    <span class="texto"></span>
+
+    <script>
+        const contato = document.querySelector('#contato');
+        const texto = document.querySelector('.texto');
+
+        //console.log(contato.elements.nome);//posso puxar pelo name ou pelo ID
+        //console.log(contato.elements.nome.value);//posso puxar pelo value caso exista
+
+        //puxamos o value de acordo com o evento:
+        function handleKeyUp(event){
+            console.log(event.target.value);//me retorna o valor digitado
+            console.log(event.target.checkValidity());//me retorna true ou false caso for valido
+            
+           const target = event.target;//pra facilitar a utilização do target
+           if(!target.checkValidity()){
+               target.classList.add('invalido');
+               contato.nome.setCustomValidity('nome é importante!');//permite que eu personalize uma msg
+               target.nextElementSibling.innerText = target.validationMessage;//seleciona o span com o nextElementSibling e exibe a mensagem de erro abaixo
+           }
+
+
+        }
+        contato.addEventListener('change', handleKeyUp);
+
+        const form = document.querySelector('#contato');
+        function handleChange(event){
+            //document.body.style.backgroundColor = event.target.value;//muda a cor do fundo de acordo com o value
+            document.body.style.backgroundColor = event.target.value;
+            console.log(event.target.value);
+            //console.log(event.target.checked);//consigo verificar se o value ta com checked ou não
+            
+            if(event.target.checked){
+                console.log(event.target.value);//só me mostra se estiver ativo o check
+            }
+        }
+        form.addEventListener('change', handleChange);
+
+        //pegando todos os valores, preenchidos nos campos do form de uma vez só:
+        const dados = {};
+        function handleDados(event){
+            dados[event.target.name] = event.target.value;
+            console.log(dados);
+        }
+        contato.addEventListener('change', handleDados);
+        
+
+    </script>
+</body>
+</html>
