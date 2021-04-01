@@ -23,7 +23,7 @@ const handleStyle = {
         this.element.style.borderRadius = value + 'px';
     },
     texto(value){
-        this.element.style.innerText = value;
+        this.element.innerText = value;
     },
     fontFamily(value){
         this.element.style.fontFamily = value;
@@ -44,8 +44,10 @@ function handleChange(event){
     const value = event.target.value;//pega o valor do campo
 
     handleStyle[name](value);//ativando a minha função
+    saveValue(name, value);//ativando a função 
     showCSS();//ativando a minha function
 }
+controles.addEventListener('change', handleChange);
 
 function showCSS(){
     cssText.innerHTML = '<span>' + btn.style.cssText.split('; ').join(';</span><span>');
@@ -53,7 +55,17 @@ function showCSS(){
 
 //Salvar o estilo do btn no localStorage:
 function saveValue(name, value){
-    localStorage(name)= value;
+    localStorage[name] = value;
 }
 
-controles.addEventListener('change', handleChange);
+//Função para setar os valores
+function setValue(){
+    const properties = Object.keys(localStorage);//vai retornar um obj com todas as chaves
+    properties.forEach((propertie)=>{
+        handleStyle[propertie](localStorage[propertie]);
+        controles.elements[propertie].value = localStorage[propertie];//pega todas as propriedades do meu controle e me retorna uma por uma
+    })
+    showCSS();
+}
+setValue();
+
