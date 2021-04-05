@@ -19,9 +19,15 @@ function handleChange(event){
     const value = event.target.value;
     handleStyle[name](value);
     showCss();
+    saveValues(name, value);
 }
 
 //exibir o css texto
 function showCss(){
     cssText.innerHTML = '<span>' + btn.style.cssText.split('; ').join(';</span><span>');
+}
+
+//salvar no localstorage
+function saveValues(name, value){
+    localStorage[name] = value;
 }
