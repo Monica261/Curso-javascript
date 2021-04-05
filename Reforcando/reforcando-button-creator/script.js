@@ -31,3 +31,14 @@ function showCss(){
 function saveValues(name, value){
     localStorage[name] = value;
 }
+
+//setar os valores
+function setValues(){
+    const properties = Object.keys(localStorage);//vai retornar um array com todas as chaves
+    properties.forEach((propertie)=>{//pra cada propriedade eu posso definir o valor como está no localstorage
+        handleStyle[propertie](localStorage[propertie]);//ativando as propriedades no localstorage
+        controles.elements[propertie].value = localStorage[propertie];
+    })
+    showCss();
+}
+setValues();
