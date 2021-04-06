@@ -685,3 +685,9 @@ for(var i = 0; i < 4; i++){console.log(document.body.style.backgroundColor = "re
 estudar esse tipo de condição:
 
 <span>CONCLUÍDO - {done ? 'concluído':'falso'}</span>
+
+########################################################################################################
+
+Atribuição ternuario -> estudar mais!:
+
+const premium = prompt('Qual sua pontuação?'); const condicao = premium  >= 20 ? 'cliente premium' : 'Cliente não premium'; console.log(condicao);
