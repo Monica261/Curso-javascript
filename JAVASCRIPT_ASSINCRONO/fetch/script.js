@@ -49,3 +49,42 @@ sobre.then(res => res.text())
     document.querySelector('h1').innerText = titulo.innerText;
     console.log(titulo);
 })
+
+//Blob
+
+const imagem = fetch('./imagem.jpg');
+
+imagem.then(resposta => resposta.blob())
+.then(body => {
+    const blobURL = URL.createObjectURL(body);
+    const imgDom = document.querySelector('img');
+    imgDom.src =  blobURL;
+});
+
+//.clone()
+
+const clonado = fetch('https://viacep.com.br/ws/12220110/json/');
+
+clonado.then(r => {
+    const r2 = r.clone();
+    r.text().then((text)=>{
+        console.log(text);
+    })
+    r2.json().then((json)=>{
+        console.log(json);
+    })
+})
+.then(body=>{
+    console.log(body);
+})
+
+//status
+imagem.then(resposta =>{
+    console.log(resposta.status)//200
+    console.log(resposta.type)//me retorna o tipo da requisição
+    console.log(resposta.url)//me retorna a url
+    if(resposta.status === 404){
+        console.log('arquivo não encontrado');
+    }
+})
+
