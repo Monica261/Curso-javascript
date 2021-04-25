@@ -33,3 +33,44 @@ function buscaCEP(CEP) {
 // Utilizando a API https://api.chucknorris.io/jokes/random
 // retorne uma piada randomica do chucknorris, toda vez que
 // clicar em próxima
+const paragrafo = document.querySelector('.piada');
+const btnproxima = document.querySelector('.proxima');
+
+btnproxima.addEventListener('click', piadaNext);
+
+function piadaNext(value) {
+    const piada = fetch('https://api.chucknorris.io/jokes/random');
+    piada.then(r => r.json())
+        .then(piada => {
+            paragrafo.innerText = piada.value;
+        })
+
+}
+piadaNext();
+
+
+//reforçando Blob
+const imagem = fetch('./imagem.jpg');
+imagem.then(r => r.blob())
+    .then(body => {
+        const blobURL = URL.createObjectURL(body);//cria uma url com a imagem
+        const img = document.querySelector('img');//seleciono a img no meu index.html
+        img.src = blobURL;
+        console.log(blobURL);
+    })
+
+//reforçando Clone
+const link = fetch('https://viacep.com.br/ws/12220110/json/');
+link.then(r => {
+    const r2 = r.clone()
+    r.text().then((text) => {
+        console.log(text);
+    });
+    r2.json().then((json) => {
+        console.log(json);
+    });
+
+})
+    .then(body => {
+
+    })
