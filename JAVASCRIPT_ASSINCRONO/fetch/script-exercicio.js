@@ -59,6 +59,21 @@ function piadaNext(value) {
 }
 piadaNext();
 
+//Consumindo API do Kenye West para gerar as melhores frases do maior 
+//contemporaneo da atualidade https://api.kanye.rest/
+const frase = document.querySelector('.frase');
+const proximaFrase = document.querySelector('.proximaFrase');
+
+proximaFrase.addEventListener('click', filosofou);
+
+function filosofou(quote){
+    const kenye = fetch('https://api.kanye.rest/');
+    kenye.then(f => f.json())
+    .then(filosofia=>{
+        frase.innerText = filosofia.quote;
+    })
+}
+filosofou();
 
 //reforçando Blob
 const imagem = fetch('./imagem.jpg');
