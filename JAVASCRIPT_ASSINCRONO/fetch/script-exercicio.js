@@ -46,6 +46,7 @@ fetchBTC();
 // clicar em próxima
 const paragrafo = document.querySelector('.piada');
 const btnproxima = document.querySelector('.proxima');
+const imgPiada = document.querySelector('.img-piada');
 
 btnproxima.addEventListener('click', piadaNext);
 
