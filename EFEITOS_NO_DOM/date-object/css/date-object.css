@@ -12,3 +12,11 @@
 [data-semana].aberto::after{
     background: greenyellow;
 }
+
+.btcPreco{
+    background: greenyellow;
+    padding: .2rem .5rem;
+    margin: 0px 2px;
+    font-weight: bold;
+    border-radius: 2px;
+}
