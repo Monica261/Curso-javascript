@@ -15,7 +15,7 @@ Button.prototype.element = function(){
 const redButton = new Button('comprar', 'red');
 console.log(redButton)
 
-//Classes são syntactical sugar de construtor functions, sintaxe mais limpa
+//Classes são syntactical sugar de construtor functions, sintaxe mais limpa 
 //This é a palavra chave, this faz referencia ao objeto construido a partir do New
 
 class Carro {
