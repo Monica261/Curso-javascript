@@ -691,3 +691,11 @@ estudar esse tipo de condição:
 Atribuição ternuario -> estudar mais!:
 
 const premium = prompt('Qual sua pontuação?'); const condicao = premium  >= 20 ? 'cliente premium' : 'Cliente não premium'; console.log(condicao);
+
+########################################################################################################
+
+Reforçando Promise: https://js.do/code/promiseorigamid
+
+Reforçando Classes: https://js.do/code/classesjs
+
+Reforçando Async e Await: https://js.do/code/reforcandoasyncawait
