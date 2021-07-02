@@ -699,3 +699,12 @@ Reforçando Promise: https://js.do/code/promiseorigamid
 Reforçando Classes: https://js.do/code/classesjs
 
 Reforçando Async e Await: https://js.do/code/reforcandoasyncawait
+
+Reforçando classe: https://js.do/code/reforcandoclassesjs
+
+
+Estudar como consumir API do Rick and Morty com Fetch e Promisses:
+https://youtu.be/kS1p5_OXpLc
+https://js.do/code/rickandmortyapi
+
+Consumindo API Covid 19: https://js.do/code/apicovid19
