@@ -22,7 +22,6 @@ const cep = fetch('https://viacep.com.br/ws/01001000/json/')
 
 //injetando style.css via fetch no body
 
-
 const estilo = fetch('./style.css')
 .then(res => res.text())
 .then(styleBody =>{
@@ -42,3 +41,4 @@ const sobre = fetch('sobre.html')
     document.querySelector('h1').innerText = titulo.innerText;
 
 })
+
