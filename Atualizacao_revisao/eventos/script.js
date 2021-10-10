@@ -27,15 +27,15 @@ const peachesList = document.querySelector('.peaches-list');
 peachesList.addEventListener('click', executarCallback);
 
 //event.preventDefault() = previne o padrão do evento
-//const linkExterno = document.querySelector('a[href^="http"]');
+const linkExterno = document.querySelector('a[href^="http"]');
 
-//function clickNoLink(event) {
-//  event.preventDefault();
-//  console.log(event.currentTarget);
-//  console.log(this.getAttribute('href'));//This faz referencia a diferentes objts dependendo do contexto
-//}
+function clickNoLink(event) {
+  event.preventDefault();
+  console.log(event.currentTarget);
+  console.log(this.getAttribute('href'));//This faz referencia a diferentes objts dependendo do contexto
+}
 
-//linkExterno.addEventListener('click', clickNoLink);
+linkExterno.addEventListener('click', clickNoLink);
 
 //Diversos eventos diferentes: https://developer.mozilla.org/en-US/docs/Web/Events
 //Tipos:
