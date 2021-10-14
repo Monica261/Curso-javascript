@@ -539,6 +539,15 @@ function callback(){
 
 imagem.addEventListener('click', callback);
 
+/////////////////////////////////////////
+Eventos do teclado -> keydown, keyup e keypress
+
+*com essa função eu consigo saber atraves do console, qual letra o usuario clicou
+
+document.addEventListener('keypress', function(event){
+	console.log(event.key)
+})
+
 ##############################################################################################################
 
 //exemplo pra estudar
