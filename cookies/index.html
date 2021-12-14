@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap cookie alert</title>
+  <title>Bootstrap cookie alerta</title>
 
-    <!-- Bootstrap 4.1.1 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- cookiealert styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+
+  <!-- cookiealert styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+
+  <link rel="stylesheet" type="text/css" href="cookiealert.css">
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
 
     <div class="card" style="margin-top: 70px">
-        <div class="card-body">
-            <div id="fillme"></div>
-        </div>
+      <div class="card-body">
+        <div id="fillme"></div>
+      </div>
     </div>
 
+  </div>
+
+
+  <div class="alert text-left cookiealert" role="alert">
+    <div class="row">
+      <div class="col-md-8">
+       Nós coletamos cookies para oferecer um serviço personalizado. Utilize as opções abaixo para configurar suas preferências quanto à coleta de cookies. Ao continuar com a gente nessa página, você concorda com o uso de cookies e <a href="https://www.planosantacasasaude.com/beneficiario/politica-de-privacidade/" target="_blank">Política de Privacidade</a>
+     </div>
+
+     <div class="col-md-4 align-middle mt-2">
+      <button type="button" class="btn btn-primary btn-md acceptcookies">
+        Aceitar todos
+      </button>
+
+      <button type="button" class="btn btn-primary btn-md rejectcookies">
+        Rejeitar todos
+      </button>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 
-<!-- START Bootstrap-Cookie-Alert -->
-<div class="alert text-center cookiealert" role="alert">
-    <b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a href="https://cookiesandyou.com/" target="_blank">Leia mais</a>
 
-    <button type="button" class="btn btn-primary btn-sm acceptcookies">
-        Aceito
-    </button>
-</div>
-<!-- END Bootstrap-Cookie-Alert -->
+
 
 <!-- JAVASCRIPT -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<!-- Only for the demo -->
+<script src="cookiealert.js"></script>
+
+<!-- foreach para aumentar tamanho do texto -->
 <script>
-    for (var i = 1; i <= 150; i++)
-        document.querySelector("#fillme").innerHTML += "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
+  for (var i = 1; i <= 150; i++)
+    document.querySelector("#fillme").innerHTML += "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
 </script>
 
-<!-- Include cookiealert script -->
+<!-- incluindo cookiealert script -->
 <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
 
 </body>
