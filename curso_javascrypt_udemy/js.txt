@@ -1,0 +1,286 @@
+Curso js
+
+#################################################################################################
+
+Variáveis -> são endereços de memória que nos possibilitam
+armazenar dados ou informações de forma temporária
+
+*Tipos de variáveis -> int, float, string, boolean ...
+
+*Regras para declaração de variáveis em js->
+-não podem ser iniciadas com números, apenas com letras ou '-'.
+-não pode ser utilizado caracteres especiais como 'ç', '^', '~'.
+-não podem ser iguais as palavras reservadas da linguagem.
+
+*Utilize a palavra reservada 'var' antes da declaração da variável.
+
+*Case sensitive(js faz diferenciação entre palavras maiúsculas e minusculas)
+-exemplos:
+var curso, var Curso, var CURSO, var _AulaVariaveis, v
+
+* = -> sinal de atribuição
+* o tipo da variável é definida no processo de atribuição -> =
+* atraves do Alert(''); ou document.write(); eu consigo exibir o valor de uma variavel no navegador
+* posso exibir o valor da variável no console com o console.log('');
+* o comando ctrl+shift+i abrem o console no seu navegador
+
+EXEMPLO:
+
+<head>
+	<title>variaveis</title>
+	<meta charset="utf-8">
+
+	< type="text/java">
+
+		//String 
+		var texto = 'Aula js';
+
+		//float
+		var numeroFracionado = 10.7;
+
+		//int
+		var numeroInteiro = 10;
+
+		//boolean
+		var boleano = true;//armazenam somente true ou false
+
+		document.write(numeroInteiro);
+	</>
+</head>
+
+
+##########################################################################################################
+
+Concatenação -> significa juntar valores, juntar informações em uma única string, unificar conjuntos de informações
+
+*em js podemos utilizar uma função chamada prompt para capturar a entrada de um usuario
+*na concatenação podemos utilizar vários tipos de variaveis como int, string, float...
+*operações de concaenação são realizadas atraves do +
+
+EXEMPLO:
+
+<head>
+	<title>Concatenação</title>
+	<meta charset="utf-8">
+
+	< type="text/java">
+
+		//String 
+		var texto = 'Olá ';
+		var texto2 = prompt('Digite o seu nome ');
+
+		document.write(texto + texto2);
+
+
+	</>
+</head>
+
+#########################################################################################################
+
+Array Básico -> São listas ordenadas, ela tenta imitar uma lista do mundo real
+
+*permite o armazenamento em uma única variável
+
+EXEMPLO:
+
+
+<head>
+  <title>Array Básico</title>
+  <meta charset="utf-8">
+
+  < type="text/java">
+
+    var frutas = ['banana','maça','uva','manga']
+
+    alert(frutas[3]);
+
+  </>
+</head> 
+
+#####################################################################################################
+
+Arrays Multidimencionais ou Bidimencionais -> São arrays de arrays, nós poderemos acessar através de uma variável e um
+índice, o outro Array
+
+EXEMPLO:
+
+<head>
+  <title>Array Multidimencional</title>
+  <meta charset="utf-8">
+
+  < type="text/java">
+    
+    var lista_coisas = Array();
+
+    //índice
+    lista_coisas ['frutas'] = Array('Maçã','Manga','Limão');
+    lista_coisas ['pessoas'] = Array('Maria','Pedro','Carla');
+
+
+    alert(lista_coisas['frutas'][2] + lista_coisas['pessoas'][0]);
+  </>
+</head>
+
+
+
+############################################################################################################
+
+If  e Else -> é uma estrutura de controle, permite definir em uma determinada condição qual o fluxo que a aplicação vai tomar
+
+*Simples Exemplo:
+
+ if (condição) {
+      //bloco de código que será executado caso a condição for verdadeira
+    }else{
+      //bloco de código que será executado caso a condição for falsa
+    }
+
+*Podemos utilizar somente o If caso a condição for satisfeita:
+
+  if (condição) {
+      //bloco de código que será executado caso a condição for verdadeira
+    }
+
+EXEMPLOS:
+
+<head>
+  <title>Nota do aluno</title>
+  <meta charset="utf-8">
+
+  <script type="text/javascript">
+    var nota = 6;
+    var aluno = prompt('qual a nota do aluno?');
+
+    if (nota < aluno | nota == aluno) {
+      document.write('aprovado');
+    }else{
+      document.write('reprovado');
+    }
+  </script>
+</head>
+
+*************************************************************
+
+<head>
+  <title>Aprovação</title>
+  <meta charset="utf-8">
+
+  <script type="text/javascript">
+    var idade = 21;
+    var pessoa = prompt('Qual a sua idade?');
+
+    if (idade < pessoa || idade == pessoa) {
+      document.write('você é maior de idade');
+    }else{
+      document.write('você é menor de idade');
+    }
+  </script>
+</head>
+
+*************************************************************
+<script type="text/javascript">
+    // ==
+    if (2 == 2) {
+      document.write('true');
+    }else{
+      document.write('false');
+    }
+  </script>
+
+************************************************************
+
+<script type="text/javascript">
+    // === o identico verifica não só o valor mas tambem o tipo, esse exemplo exibe falso pq '2' é tipo string
+    if (2 === '2') {
+      document.write('true');
+    }else{
+      document.write('false');
+    }
+  </script>
+
+************************************************************
+
+
+
+*usei nota == aluno, para caso o aluno tire 6, ser aprovado tambem, já que somente com nota < aluno se o aluno tirar 6 
+seria reprovado
+
+########################################################################################################
+
+Operadores Lógicos -> são operadores que nos permitem juntar operações de comparação
+
+EXEMPLOS:
+
+    // && operador e
+    // || operador ou
+    // !  operador de negação
+
+
+    //&& precisa que mais de uma condição seja verdadeira para exibir verdadeiro
+    if (2 == 2 && 5 == 5 && 10 > 6) {
+      document.write('true');
+    }else{
+      document.write('false');
+    }
+***********************************************************************************
+    // || precisa que pelo menos um seja verdadeiro
+    if (2 == 2 || 10 == 5 || 10 < 6) {
+      document.write('true');
+    }else{
+      document.write('false');
+    }
+
+**********************************************************************************    
+    // ! inverte o resultado obtido em uma operação de comparação
+    if (!(2 == 8)) {
+      document.write('true');
+    }else{
+      document.write('false');
+    }
+**********************************************************************************
+
+    var notas = prompt('qual a nota do aluno?');
+    var faltas = prompt('quantas faltas o aluno tem?')
+
+    var notas = 6;
+    var faltas_limite = 15;
+
+    if (notas >= faltas && faltas <= faltas_limite ) {
+      document.write('aprovado');
+    }else{
+      document.write('reprovado');
+    }
+
+###########################################################################################################################
+
+Switch -> é um condicional, executa um determinado bloco de código em decremento de outro, ele é escrito de forma diferente
+do if e else, ele é restrito é só conseguimos fazer operações de comparação, ele organiza o nosso código de forma intuitiva
+
+EXEMPLO:
+
+<script type="text/javascript">
+
+    var opcao = 1;
+
+
+    // ==
+    switch(opcao){
+      case 1:
+      alert('Olá');
+      break;
+
+      case 2:
+      document.write('Mônica');
+      break;
+
+      case 3:
+      console.log('Olá mundo');
+      break;
+
+      default:
+      alert('nenhuma opção!');
+    }
+
+  </script>
+
+################################################################################################################
