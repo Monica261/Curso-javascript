@@ -4,6 +4,7 @@
 
         var cookieAlert = document.querySelector(".cookiealert");
         var acceptCookies = document.querySelector(".acceptcookies");
+        var rejectCookies = document.querySelector('.rejectcookies');
 
         if (!cookieAlert) {
          return;
@@ -17,19 +18,31 @@
         cookieAlert.classList.add("show");
     }
 
+    if(!getCookie('rejectCookies')){
+        cookieAlert.classList.add('show');
+    }
+
     
-    // Ao clicar no botão concordar, crie um 1 ano
+    // Ao clicar no botão concordar
     
     // cookie para lembrar a escolha do usuário e fechar o banner
     acceptCookies.addEventListener("click", function () {
         setCookie("acceptCookies", true, 365);
         cookieAlert.classList.remove("show");
 
-        // dispatch the accept event
+
         window.dispatchEvent(new Event("cookieAlertAccept"))
     });
 
-    // Cookie functions from w3schools
+    rejectCookies.addEventListener("click", function () {
+        setCookie("rejectCookies", true, 365);
+        cookieAlert.classList.remove("show");
+
+        // despachar o evento de aceitação
+        window.dispatchEvent(new Event("cookieAlertAccept"))
+    });
+
+    // Cookie funções do w3schools
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
