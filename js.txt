@@ -717,3 +717,27 @@ https://youtu.be/kS1p5_OXpLc
 https://js.do/code/rickandmortyapi
 
 Consumindo API Covid 19: https://js.do/code/apicovid19
+
+
+////CONSUMINDO API
+const btnDT = document.querySelector('.btnDT')
+function handleClickbtn(){
+    fetch('https://api.adviceslip.com/advice')//api conselhos
+    .then(response => response.json())
+    .then(conselho =>{
+        const p = document.querySelector('p');
+        document.querySelector('p').innerText = `${conselho.slip.id} - ${conselho.slip.advice}`
+    })
+}
+handleClickbtn();
+
+btnDT.addEventListener('click', handleClickbtn);
+
+////////////////////////
+const nome = prompt('nome');//api probabilidade atraves do nome
+
+fetch(`https://api.nationalize.io/?name=${nome}`)
+.then(r => r.json())
+.then(pessoa =>{
+    console.log(pessoa.name, pessoa.country[0].country_id, Math.round(pessoa.country[0].probability))
+})
