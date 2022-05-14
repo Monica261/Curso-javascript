@@ -22,3 +22,24 @@ console.log(rect.top) //distancia do elemento selecionado
 //window - para saber a respeito das dimensões da tela do usuario
 console.log(window.innerHeight) //height da janela
 console.log(window.innerWidth) //width da janela
+console.log(window.outerWidth)
+
+console.log(
+    window.pageXOffset, //distancia total do scroll vertical
+    window.pageYOffset //distancia total do scroll horizontal
+)
+
+if(window.innerHeight > 600){
+    console.log('tela maior');
+}else{
+    console.log('tela menor');
+}
+
+//match media - utiliza um media-querie como no css para verificar a largura do browser
+const tela = window.matchMedia('(max-width: 600px)');
+
+if(tela.matches){
+    console.log('tela menor que 600px')
+}else{
+    console.log('tela maior que 600px')
+}
